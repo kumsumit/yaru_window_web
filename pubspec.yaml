@@ -1,0 +1,30 @@
+name: yaru_window_web
+description: A stub implementation of yaru_window for Web.
+repository: https://github.com/ubuntu/yaru_window.dart
+issue_tracker: https://github.com/ubuntu/yaru_window.dart/issues
+version: 0.0.4
+publish_to: none
+
+environment:
+  sdk: ">=3.14.0 <4.0.0"
+  flutter: ">=3.50.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  yaru_window_platform_interface: 
+    git: https://github.com/kumsumit/yaru_window_platform_interface.git
+
+
+dev_dependencies:
+  ubuntu_lints: ^0.4.2
+
+flutter:
+  plugin:
+    implements: yaru_window
+    platforms:
+      web:
+        pluginClass: YaruWebWindow
+        fileName: src/web_window.dart

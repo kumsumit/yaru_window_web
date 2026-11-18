@@ -1,0 +1,20 @@
+## 0.0.4
+
+ - **CHORE**: update FLutter to 3.32.0
+
+## 0.0.3+1
+
+ - Update a dependency to the latest release.
+
+## 0.0.3
+
+- Migrate to Flutter 3.10 and Dart 3.0.
+
+## 0.0.2
+
+- Provide suitable default non-closable/movable/min/maximizable/restorable
+  state for YaruWindowTitle.
+
+## 0.0.1
+
+- Initial version.
