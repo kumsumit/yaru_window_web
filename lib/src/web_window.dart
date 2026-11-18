@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'dart:ui';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:yaru_window_platform_interface/yaru_window_platform_interface.dart';
@@ -38,6 +40,8 @@ class YaruWebWindow extends YaruWindowPlatform {
   @override
   Future<void> setBackground(int id, Color color) async {}
   @override
+  Future<void> setBrightness(int id, Brightness brightness) async {}
+  @override
   Future<void> setTitle(int id, String title) async {}
   @override
   Future<void> setMinimizable(int id, bool minimizable) async {}
@@ -46,14 +50,35 @@ class YaruWebWindow extends YaruWindowPlatform {
   @override
   Future<void> setClosable(int id, bool closable) async {}
 
+  // A web page cannot resize, move, pin or restyle the browser window it runs
+  // in, so these are accepted and ignored instead of throwing.
+  @override
+  Future<void> setControlButtonsVisible(int id, bool visible) async {}
+  @override
+  Future<void> setResizable(int id, bool resizable) async {}
+  @override
+  Future<void> setMinimumSize(int id, Size size) async {}
+  @override
+  Future<void> setMaximumSize(int id, Size size) async {}
+  @override
+  Future<void> setSize(int id, Size size) async {}
+  @override
+  Future<void> setPosition(int id, Offset position) async {}
+  @override
+  Future<void> center(int id) async {}
+  @override
+  Future<void> setAlwaysOnTop(int id, bool alwaysOnTop) async {}
+  @override
+  Future<void> setSkipTaskbar(int id, bool skip) async {}
+
   @override
   Future<YaruWindowState> state(int id) async => const YaruWindowState(
-        isClosable: false,
-        isMovable: false,
-        isMaximizable: false,
-        isMinimizable: false,
-        isRestorable: false,
-      );
+    isClosable: false,
+    isMovable: false,
+    isMaximizable: false,
+    isMinimizable: false,
+    isRestorable: false,
+  );
   @override
   Stream<YaruWindowState> states(int id) => const Stream.empty();
 
